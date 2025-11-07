@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Printer, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Printer, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -125,7 +125,10 @@ const Contact = () => {
             {/* Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-primary" />
+                  Send Us a Message
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -209,21 +212,66 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Map */}
-            <Card className="overflow-hidden h-full">
-              <CardContent className="p-0 h-full">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.8842877486874!2d-117.86847!3d34.02286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32b1c9f9f5555%3A0x5555555555555555!2s20258%20Carrey%20Rd%2C%20Walnut%2C%20CA%2091789!5e0!3m2!1sen!2sus!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: '600px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Pralumex Location"
-                />
-              </CardContent>
-            </Card>
+            {/* Business Hours & Map */}
+            <div className="space-y-6">
+              {/* Business Hours */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-primary" />
+                    Business Hours
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Monday</span>
+                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Tuesday</span>
+                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Wednesday</span>
+                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Thursday</span>
+                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Friday</span>
+                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Saturday</span>
+                      <span className="font-medium">Closed</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Sunday</span>
+                      <span className="font-medium">Closed</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Map */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.8842877486874!2d-117.86847!3d34.02286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32b1c9f9f5555%3A0x5555555555555555!2s20258%20Carrey%20Rd%2C%20Walnut%2C%20CA%2091789!5e0!3m2!1sen!2sus!4v1234567890"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Pralumex Location"
+                  />
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
