@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Phone, Mail, Printer, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -17,6 +18,53 @@ const Contact = () => {
     inquiry: "",
     message: "",
   });
+
+  // State for current time and business status
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Check if business is currently open
+  const checkBusinessStatus = (date: Date) => {
+    const day = date.getDay(); // 0 = Sunday, 6 = Saturday
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const currentMinutes = hours * 60 + minutes;
+
+    // Monday (1) to Friday (5), 8:30 AM (510 minutes) to 5:30 PM (1050 minutes)
+    const openingTime = 8 * 60 + 30; // 8:30 AM = 510 minutes
+    const closingTime = 17 * 60 + 30; // 5:30 PM = 1050 minutes
+
+    const isWeekday = day >= 1 && day <= 5;
+    const isDuringBusinessHours = currentMinutes >= openingTime && currentMinutes < closingTime;
+
+    return isWeekday && isDuringBusinessHours;
+  };
+
+  // Update time every minute
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(now);
+      setIsOpen(checkBusinessStatus(now));
+    };
+
+    // Initial update
+    updateTime();
+
+    // Update every minute
+    const interval = setInterval(updateTime, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Format time as "10:00 AM"
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -217,10 +265,21 @@ const Contact = () => {
               {/* Business Hours */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    Business Hours
-                  </CardTitle>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="flex items-center gap-2">
+                      <Clock className="w-5 h-5 text-primary" />
+                      Business Hours
+                    </CardTitle>
+                    <Badge
+                      className={`${
+                        isOpen
+                          ? "bg-green-500 hover:bg-green-600 text-white"
+                          : "bg-red-500 hover:bg-red-600 text-white"
+                      } border-0 px-3 py-1`}
+                    >
+                      {formatTime(currentTime)} | {isOpen ? "Open" : "Closed"}
+                    </Badge>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2 text-sm">
