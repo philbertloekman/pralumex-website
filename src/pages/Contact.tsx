@@ -209,41 +209,21 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Map & CTA */}
-            <div className="space-y-6">
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.8842877486874!2d-117.86847!3d34.02286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32b1c9f9f5555%3A0x5555555555555555!2s20258%20Carrey%20Rd%2C%20Walnut%2C%20CA%2091789!5e0!3m2!1sen!2sus!4v1234567890"
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Pralumex Location"
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className="bg-primary text-primary-foreground">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">
-                    Ready to Get Started?
-                  </h3>
-                  <p className="mb-6 opacity-90">
-                    Contact us today for a competitive quote and discover how we can help you
-                    contribute to a cleaner environment while improving your bottom line.
-                  </p>
-                  <div className="space-y-2 text-sm opacity-90">
-                    <p>✓ Competitive pricing</p>
-                    <p>✓ Prompt financial settlements</p>
-                    <p>✓ Flexible payment terms</p>
-                    <p>✓ 35+ years of expertise</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            {/* Map */}
+            <Card className="overflow-hidden h-full">
+              <CardContent className="p-0 h-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.8842877486874!2d-117.86847!3d34.02286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32b1c9f9f5555%3A0x5555555555555555!2s20258%20Carrey%20Rd%2C%20Walnut%2C%20CA%2091789!5e0!3m2!1sen!2sus!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '600px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Pralumex Location"
+                />
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
