@@ -1,0 +1,7 @@
+name: pralumex-website
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - nodejs>=20
+
