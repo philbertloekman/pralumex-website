@@ -40,7 +40,7 @@ const Contact = () => {
     return isWeekday && isDuringBusinessHours;
   };
 
-  // Update time every minute
+  // Update time every second
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -51,8 +51,8 @@ const Contact = () => {
     // Initial update
     updateTime();
 
-    // Update every minute
-    const interval = setInterval(updateTime, 60000);
+    // Update every second for real-time display
+    const interval = setInterval(updateTime, 1000);
 
     return () => clearInterval(interval);
   }, []);
