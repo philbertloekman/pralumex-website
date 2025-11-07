@@ -283,31 +283,73 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 1
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Monday</span>
                       <span className="font-medium">8:30 AM – 5:30 PM</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 2
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Tuesday</span>
                       <span className="font-medium">8:30 AM – 5:30 PM</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 3
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Wednesday</span>
                       <span className="font-medium">8:30 AM – 5:30 PM</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 4
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Thursday</span>
                       <span className="font-medium">8:30 AM – 5:30 PM</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 5
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Friday</span>
                       <span className="font-medium">8:30 AM – 5:30 PM</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 6
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Saturday</span>
                       <span className="font-medium">Closed</span>
                     </div>
-                    <div className="flex justify-between">
+                    <div
+                      className={`flex justify-between p-3 rounded-xl transition-all duration-500 ${
+                        currentTime.getDay() === 0
+                          ? "bg-gradient-to-br from-primary/20 via-primary/10 to-transparent backdrop-blur-sm border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] scale-[1.02] cursor-pointer hover:from-primary/30 hover:via-primary/15 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] hover:scale-[1.03]"
+                          : ""
+                      }`}
+                    >
                       <span className="text-muted-foreground">Sunday</span>
                       <span className="font-medium">Closed</span>
                     </div>
