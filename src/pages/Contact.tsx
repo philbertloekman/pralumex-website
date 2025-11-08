@@ -277,7 +277,7 @@ const Contact = () => {
                           : "bg-red-500 hover:bg-red-600 text-white"
                       } border-0 px-3 py-1`}
                     >
-                      {formatTime(currentTime)} | {isOpen ? "Open" : "Closed"}
+                      {isOpen ? "Open" : "Closed"} | {formatTime(currentTime)}
                     </Badge>
                   </div>
                 </CardHeader>
