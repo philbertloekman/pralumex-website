@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { HeartHandshake, Users, DollarSign, Leaf, Handshake, ArrowRight } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
-import heroImage from "@/assets/plastic-scrap.jpg";
+import heroImage from "@/assets/plastic-scrap-compress.jpg";
 
 const Home = () => {
   const scrapValues = [
