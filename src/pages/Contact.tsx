@@ -353,6 +353,9 @@ const Contact = () => {
                       <span className="text-muted-foreground">Sunday</span>
                       <span className="font-medium">Closed</span>
                     </div>
+                    <p className="text-[11px] text-muted-foreground mt-4">
+                      Hours may vary during major holidays.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
