@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { HeartHandshake, Users, DollarSign, Leaf, Handshake, ArrowRight } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 // Import hero images
 import plasticScrapCompress from "@/assets/plastic-scrap-compress.jpg";
@@ -21,6 +21,17 @@ const Home = () => {
   const heroImage = useMemo(() => {
     return heroImages[Math.floor(Math.random() * heroImages.length)];
   }, []);
+
+  // Track when the hero image has loaded
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  // Preload the hero image
+  useEffect(() => {
+    const img = new Image();
+    img.src = heroImage;
+    img.onload = () => setImageLoaded(true);
+  }, [heroImage]);
+
   const scrapValues = [
     {
       icon: HeartHandshake,
@@ -54,9 +65,10 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
           style={{
             backgroundImage: `url(${heroImage})`,
+            opacity: imageLoaded ? 1 : 0,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/50" />
