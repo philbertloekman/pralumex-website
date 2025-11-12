@@ -30,9 +30,9 @@ const Contact = () => {
     const minutes = date.getMinutes();
     const currentMinutes = hours * 60 + minutes;
 
-    // Monday (1) to Friday (5), 8:30 AM (510 minutes) to 5:30 PM (1050 minutes)
-    const openingTime = 8 * 60 + 30; // 8:30 AM = 510 minutes
-    const closingTime = 17 * 60 + 30; // 5:30 PM = 1050 minutes
+    // Monday (1) to Friday (5), 9:00 AM (540 minutes) to 5:00 PM (1020 minutes)
+    const openingTime = 9 * 60; // 9:00 AM = 540 minutes
+    const closingTime = 17 * 60; // 5:00 PM = 1020 minutes
 
     const isWeekday = day >= 1 && day <= 5;
     const isDuringBusinessHours = currentMinutes >= openingTime && currentMinutes < closingTime;
@@ -286,57 +286,57 @@ const Contact = () => {
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 1
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
                       <span className="text-muted-foreground">Monday</span>
-                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                      <span className="font-medium">9:00 AM – 5:00 PM</span>
                     </div>
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 2
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
                       <span className="text-muted-foreground">Tuesday</span>
-                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                      <span className="font-medium">9:00 AM – 5:00 PM</span>
                     </div>
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 3
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
                       <span className="text-muted-foreground">Wednesday</span>
-                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                      <span className="font-medium">9:00 AM – 5:00 PM</span>
                     </div>
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 4
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
                       <span className="text-muted-foreground">Thursday</span>
-                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                      <span className="font-medium">9:00 AM – 5:00 PM</span>
                     </div>
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 5
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
                       <span className="text-muted-foreground">Friday</span>
-                      <span className="font-medium">8:30 AM – 5:30 PM</span>
+                      <span className="font-medium">9:00 AM – 5:00 PM</span>
                     </div>
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 6
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
@@ -346,7 +346,7 @@ const Contact = () => {
                     <div
                       className={`flex justify-between p-3 rounded-xl transition-all duration-300 ${
                         currentTime.getDay() === 0
-                          ? "bg-primary/15 border border-primary/40"
+                          ? "bg-gray-100 border border-gray-300"
                           : ""
                       }`}
                     >
