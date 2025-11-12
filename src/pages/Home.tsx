@@ -2,9 +2,25 @@ import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { HeartHandshake, Users, DollarSign, Leaf, Handshake, ArrowRight } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
-import heroImage from "@/assets/plastic-scrap-compress.jpg";
+import { useMemo } from "react";
+
+// Import hero images
+import plasticScrapCompress from "@/assets/plastic-scrap-compress.jpg";
+import colorfulPelletsFilledCompress from "@/assets/colorful-plastic-pellets-filled-compress.jpg";
+import colorfulPelletsBorderCompress from "@/assets/colorful-plastic-pellets-border-compress.jpg";
 
 const Home = () => {
+  // List of hero images to randomly select from
+  const heroImages = [
+    plasticScrapCompress,
+    colorfulPelletsFilledCompress,
+    colorfulPelletsBorderCompress
+  ];
+
+  // Randomly select a hero image once on component mount
+  const heroImage = useMemo(() => {
+    return heroImages[Math.floor(Math.random() * heroImages.length)];
+  }, []);
   const scrapValues = [
     {
       icon: HeartHandshake,
